@@ -27,30 +27,15 @@ public class ProductController {
 		return productService.saveAll(product);
 	}
 	
-	@GetMapping("/getProduct")
-	public List<Product> findAllProducts(){
-		return productService.findProduts();
-	}
-	
 	@GetMapping("/getById")
 	public Product getProductById(@RequestParam int prodId) {
 		return productService.getDataById(prodId);
 		
-	}
-	
-	@GetMapping("/getByName")
-	public List<Product> getProductByName(@RequestParam String name) {
-		return productService.finfByName(name);
-		
-	}
+	}		
 	
 	@DeleteMapping("/deleteById")
 	public String deleteById(@RequestParam int id) {
 		return productService.deleteByName(id);
 	}
 	
-	@PutMapping("/updateProd")
-	public Product updateProd(@RequestParam int id, @RequestBody Product prod) {
-		return productService.updateProduct(id, prod);
 	}
-}
