@@ -22,18 +22,18 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-	@PostMapping("/saveProduct")
+	@PostMapping("/AddEmployeeDetails")
 	public Product save(@RequestBody Product product) {
 		return productService.saveAll(product);
 	}
 	
-	@GetMapping("/getById")
+	@GetMapping("/getEmployeeById")
 	public Product getProductById(@RequestParam int prodId) {
 		return productService.getDataById(prodId);
 		
 	}		
 	
-	@DeleteMapping("/deleteById")
+	@DeleteMapping("/deleteEmployeeById")
 	public String deleteById(@RequestParam int id) {
 		return productService.deleteByName(id);
 	}
