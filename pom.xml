@@ -104,6 +104,27 @@
                     <outputDir>${project.basedir}/src/main/resources/api</outputDir>
                 </configuration>
             </plugin>
+            <plugin>
+  <groupId>io.swagger</groupId>
+    <artifactId>swaggerhub-maven-plugin</artifactId>
+    <version>1.0.9</version>
+    <executions>
+      <execution>
+        <phase>compile</phase>
+        <goals>
+          <goal>upload</goal>
+        </goals>
+          <configuration>
+          <api>${project.name}</api>
+          <owner>${swagger.org}</owner>
+          <version>${project.version}</version>
+          <inputFile>${project.basedir}/src/main/resources/api/${project.name}.json</inputFile>
+          <token>${swagger.token}</token>
+          <uploadType>inputFile</uploadType>
+		</configuration>
+            </execution>
+        </executions>
+    </plugin>
            
 </plugins>
   </build>
