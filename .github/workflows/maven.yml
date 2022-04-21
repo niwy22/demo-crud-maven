@@ -48,7 +48,7 @@ jobs:
       run: mvn -B package --file pom.xml -Dswagger.org=${{env.organization}} -Dswagger.token=${{env.token_id}}
   
      
-     ### To Publish the version if changes are Pushed to Main Branch ###
+     ### To Publish the version if changes are Pushed to Main Branch ####
     - name : Publish version
       uses: fjogeleit/http-request-action@v1
       id: swaggereq
