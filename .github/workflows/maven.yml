@@ -25,7 +25,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name : Extract version
+    - name : Extract versions
       id: vars
       run: |
          echo ::set-output name=version::$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
