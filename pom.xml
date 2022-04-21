@@ -60,7 +60,7 @@
     </dependency>
 	
 
-<!-- Deppendency for swagger docsss -->
+<!-- Deppendency for swagger docs -->
   <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
