@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.project</groupId>
-	<artifactId>demo-crud-project</artifactId>
+	<artifactId>demo-crud-maven</artifactId>
 	<version>1.0.0</version>
-	<name>demo-crud-project</name>
+	<name>demo-crud-maven</name>
 	<description>Basic Spring CRUD operations</description>
 	<properties>
 		<java.version>8</java.version>
@@ -104,28 +104,6 @@
                     <outputDir>${project.basedir}/src/main/resources/api</outputDir>
                 </configuration>
             </plugin>
-            <plugin>
-  <groupId>io.swagger</groupId>
-    <artifactId>swaggerhub-maven-plugin</artifactId>
-    <version>1.0.9</version>
-    <executions>
-      <execution>
-        <phase>compile</phase>
-        <goals>
-          <goal>upload</goal>
-        </goals>
-          <configuration>
-          <api>${project.name}</api>
-          <owner>${swagger.org}</owner>
-          <version>${project.version}</version>
-          <inputFile>${project.basedir}/src/main/resources/api/${project.name}.json</inputFile>
-          <token>${swagger.token}</token>
-          <uploadType>inputFile</uploadType>
-		</configuration>
-            </execution>
-        </executions>
-    </plugin>  
-            
 </plugins>
   </build>
 <repositories>
