@@ -28,14 +28,14 @@ public class ProductController {
 	}
 	
 	@GetMapping("/getEmployeeById")
-	public Product getProductById(@RequestParam int prodId) {
-		return productService.getDataById(prodId);
+	public Product getProductById(@RequestParam int employeeId) {
+		return productService.getDataById(employeeId);
 		
 	}		
 	
 	@DeleteMapping("/deleteEmployeeById")
-	public String deleteById(@RequestParam int id) {
-		return productService.deleteByName(id);
+	public String deleteById(@RequestParam int employeeId) {
+		return productService.deleteByName(employeeId);
 	}
 	
 	}
