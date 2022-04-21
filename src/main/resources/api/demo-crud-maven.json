@@ -2,7 +2,11 @@
   "openapi" : "3.0.1",
   "info" : {
     "title" : "OpenAPI definition",
-    "version" : "1.0.0"
+    "version" : "1.0.0",
+    "license" : {
+      "name" : "nous",
+      "url" : "http://nous.com"
+    }
   },
   "servers" : [ {
     "url" : "http://0.0.0.0:8080",
