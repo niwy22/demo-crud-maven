@@ -104,6 +104,7 @@
                     <outputDir>${project.basedir}/src/main/resources/api</outputDir>
                 </configuration>
             </plugin>
+           
 </plugins>
   </build>
 <repositories>
