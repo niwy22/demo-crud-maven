@@ -1,1 +1,121 @@
-{"openapi":"3.0.1","info":{"title":"OpenAPI definition","version":"v0"},"servers":[{"url":"http://0.0.0.0:8080","description":"Generated server url"}],"paths":{"/api/AddEmployeeDetails":{"post":{"tags":["product-controller"],"operationId":"save","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Product"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/Product"}}}}}}},"/api/getEmployeeById":{"get":{"tags":["product-controller"],"operationId":"getProductById","parameters":[{"name":"employeeId","in":"query","required":true,"schema":{"type":"integer","format":"int32"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/Product"}}}}}}},"/api/deleteEmployeeById":{"delete":{"tags":["product-controller"],"operationId":"deleteById","parameters":[{"name":"employeeId","in":"query","required":true,"schema":{"type":"integer","format":"int32"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}}}},"components":{"schemas":{"Product":{"type":"object","properties":{"id":{"type":"integer","format":"int32"},"name":{"type":"string"},"emailId":{"type":"string"},"city":{"type":"string"}}}}}}
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "OpenAPI definition",
+    "version" : "1.0.0",
+    "license" : {
+      "name" : "nous",
+      "url" : "http://nous.com"
+    }
+  },
+  "servers" : [ {
+    "url" : "http://0.0.0.0:8080",
+    "description" : "Generated server url"
+  } ],
+  "paths" : {
+    "/api/AddEmployeeDetails" : {
+      "post" : {
+        "tags" : [ "product-controller" ],
+        "operationId" : "save",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Product"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getEmployeeById" : {
+      "get" : {
+        "tags" : [ "product-controller" ],
+        "operationId" : "getProductById",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/deleteEmployeeById" : {
+      "delete" : {
+        "tags" : [ "product-controller" ],
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Product" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "emailId" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
