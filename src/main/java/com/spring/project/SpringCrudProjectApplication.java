@@ -24,9 +24,11 @@ public class SpringCrudProjectApplication {
 	@Autowired ObjectMapper ojectMapper;
 	  
 	  @Bean public OpenAPI customOpenAPI(@Value("${application-description}")
-	  String appDesciption, @Value("${application-version}") String appVersion) {
-	  return new OpenAPI() .info(new Info() .title("demo-crud-maven")
+	  String appDesciption, @Value("${application-version}") String appVersion,
+	  @Value("${application-name}") String appName) 
+	  {
+	  return new OpenAPI() .info(new Info() .title(appName)
 	  .version(appVersion) .description(appDesciption)
-	  .termsOfService("http://swagger.io/terms/")) ; }
+	  .termsOfService("http://nousinfo.com/terms/")) ; }
 	 
 }

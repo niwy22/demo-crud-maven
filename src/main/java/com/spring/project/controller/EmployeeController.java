@@ -2,6 +2,7 @@ package com.spring.project.controller;
 
 import java.util.List;
 
+import org.hibernate.sql.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,15 +28,15 @@ public class EmployeeController {
 		return productService.saveAll(product);
 	}
 	
-	@GetMapping("/getEmployeeById")
-	public Employee getProductById(@RequestParam int EmployeeId) {
-		return productService.getDataById(EmployeeId);
+	@GetMapping("/getEmployeeByemailId")
+	public List<Employee> getProductByName(@RequestParam String emailId) {
+		return productService.findByName(emailId);
 		
 	}
 	
-	@DeleteMapping("/deleteEmployeeById")
-	public String deleteById(@RequestParam int id) {
-		return productService.deleteByName(id);
+	@DeleteMapping("/deleteEmployeeByemailId")
+	public String deleteById(@RequestParam String  email_id) {
+		return productService.deleteByemailId(email_id);
 	}
 	/*
 	 * @PutMapping("/updateEmployee") public Employee updateProd(@RequestParam int
