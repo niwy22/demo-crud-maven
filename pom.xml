@@ -118,7 +118,7 @@
           <api>${project.name}</api>
           <owner>${swagger.org}</owner>
           <version>${project.version}</version>
-          <inputFile>${project.basedir}/src/main/resources/api/${project.name}.json</inputFile>
+          <inputFile>${project.basedir}/api/${project.name}.json</inputFile>
           <token>${swagger.token}</token>
           <uploadType>inputFile</uploadType>
        </configuration>
