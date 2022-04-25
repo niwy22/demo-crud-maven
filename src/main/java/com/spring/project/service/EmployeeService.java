@@ -35,23 +35,35 @@ public class EmployeeService {
 		return productRepo.findByemailId(emailId);
 	}
 	
-	/*
-	 * //delete by Id public String deleteByName(int id) {
-	 * productRepo.deleteById(id);
-	 * //System.out.println("product removed successufully for id : "+id); return
-	 * "Employee details removed successufully for id : "+id; }
-	 */
-	
 	//delete by email
 	@Transactional
 	public String deleteByemailId(String email_id) {
-		//return "Employee details removed successufully for id : "+email_id;
-		//System.out.println("Employee removed successufully for email_id : "+email_id);
-		return productRepo.deleteByemailId(email_id);
-		
-		//String emailId = productRepo.deleteByemailId(String email_id);
-		
+		return productRepo.deleteByemailId(email_id);	
 	}
+
+	
+	  //update the product 
+	public Employee updateProduct(String email_id,Employee product) { 
+		Employee prod = productRepo.findById(email_id).orElse(null);
+	  //Product prod = productRepo.findById(product.getId()).orElse(null);
+	  prod.setName(prod.getName()); 
+	  prod.setEmailId(prod.getEmailId());
+	  prod.setWorklocation(prod.getWorklocation()); 
+	  prod.setAge(prod.getAge());
+	  prod.setGender(prod.getGender()); 
+	  prod.setDesignation(prod.getDesignation());
+	  prod.setDOB(prod.getDOB());
+	  
+	  
+	  return productRepo.save(prod); 
+	  }
+	 
+
+	
+
+	
+
+	
 	
 	
 	

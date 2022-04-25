@@ -6,6 +6,7 @@ import org.hibernate.sql.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,20 +29,21 @@ public class EmployeeController {
 		return productService.saveAll(product);
 	}
 	
-	@GetMapping("/getEmployeeByemailId")
-	public List<Employee> getProductByName(@RequestParam String emailId) {
+	@GetMapping("/getEmployeeByemailId/{email_id}")
+	public List<Employee> getProductByName(@PathVariable("email_id")String emailId) {
 		return productService.findByName(emailId);
 		
 	}
 	
-	@DeleteMapping("/deleteEmployeeByemailId")
-	public String deleteById(@RequestParam String  email_id) {
+	@DeleteMapping("/deleteEmployeeByemailId/{email_id}")
+	public String deleteById(@PathVariable("email_id") String  email_id) {
 		return productService.deleteByemailId(email_id);
 	}
-	/*
-	 * @PutMapping("/updateEmployee") public Employee updateProd(@RequestParam int
-	 * employeeId, @RequestBody Employee prod) { return
-	 * productService.updateProduct(employeeId, prod); }
-	 */
 	
-	}
+	
+	  @PutMapping("/updateEmployeeByemailId/{email_id}") 
+	  public Employee updateProd(@PathVariable("email_id") String email_id, @RequestBody Employee
+	  prod)
+	  { return productService.updateProduct(email_id, prod); }
+	 
+}

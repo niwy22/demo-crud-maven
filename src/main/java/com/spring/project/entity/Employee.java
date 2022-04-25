@@ -1,6 +1,8 @@
 package com.spring.project.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +11,6 @@ import javax.persistence.Table;
 public class Employee {
 
 	@Id
-	
 	private String name;
 	private String emailId;
 	private String Worklocation;
@@ -64,6 +65,11 @@ public class Employee {
 	}
 	public void setDOB(String dOB) {
 		DOB = dOB;
+	}
+
+	public Employee orElse(Object object) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
