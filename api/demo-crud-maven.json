@@ -4,11 +4,11 @@
     "title" : "demo-crud-maven",
     "description" : "API to perform employee data manipulations",
     "termsOfService" : "http://nousinfo.com/terms/",
-    "version" : "1.0.0",
     "license" : {
       "name" : "Nous Licence Policy",
       "url" : "http://nousinfo.com"
-    }
+    },
+    "version" : "1.0.0"
   },
   "servers" : [ {
     "url" : "http://0.0.0.0:8080",
@@ -23,6 +23,8 @@
           "name" : "email_id",
           "in" : "path",
           "required" : true,
+          "style" : "simple",
+          "explode" : false,
           "schema" : {
             "type" : "string"
           }
@@ -87,6 +89,8 @@
           "name" : "email_id",
           "in" : "path",
           "required" : true,
+          "style" : "simple",
+          "explode" : false,
           "schema" : {
             "type" : "string"
           }
@@ -116,6 +120,8 @@
           "name" : "email_id",
           "in" : "path",
           "required" : true,
+          "style" : "simple",
+          "explode" : false,
           "schema" : {
             "type" : "string"
           }
